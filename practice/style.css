@@ -1,0 +1,50 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-navigation {
+  margin: 60px 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-btn {
+  display: inline-block;
+  margin: 0 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 100px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #64a3e6;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.item-btn.active {
+  transform: scale(1.1);
+  background-color: #ea93ea;
+}
+
+.content-box {
+  position: relative;
+}
+
+.content-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+}
+
+.content-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
