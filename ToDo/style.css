@@ -1,25 +1,30 @@
-.box {
-  width: 500px;
-  height: 300px;
-  position: relative;
-  background-color: #5f9ea0;
+.main-title {
+  font-size: 28px;
 }
 
-.ball {
-  width: 50px;
-  height: 50px;
-  background-color: #ffc0cb;
-  border-radius: 50px;
-  position: absolute;
-  top: 50px;
-  left: 50px;
+.card-headline {
+ display: flex;
+  align-content: center;
+  justify-content: space-between;
 }
 
-.mini-box {
-  width: 70px;
-  height: 70px;
-  background: #38210a;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.list-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #d8d6d6;
+}
+
+.task-value {
+  width: 70%;
+}
+
+.task-done .task-value {
+  text-decoration: line-through;
 }

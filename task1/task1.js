@@ -1,14 +1,25 @@
 let input = document.querySelector('.search');
 
-const debounce = (func, delay) => {
+function debounce(func, wait, immediate) {
     let timeout;
-    return function(...args) {
-        const context = this;
-        clearInterval(timeout);
-        timeout = setInterval(() => func.apply(context, args), delay);
+
+    return function executedFunction() {
+        let context = this,
+            args = arguments;
+
+        let later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+
+        let callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
     };
 };
 
-input.addEventListener('input', debounce(function() {
+let returnedFunction = debounce(function() {
     console.log(input.value);
-}, 1000));
+}, 500);
+input.addEventListener('keyup', returnedFunction);
